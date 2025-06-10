@@ -1,0 +1,16 @@
+Package: quantGA
+Title: Fits a linear quantile regression model using genetic algorithm
+Version: 1.0.0
+Authors@R: 
+    person("Adrien", "Orue", , "adrienorue@example.com", role = c("aut", "cre"))
+Description: Provides tools to fit linear quantile regression models using a
+    genetic algorithm to estimate the coefficients.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+LinkingTo: 
+    Rcpp,
+    RcppArmadillo
+Imports: 
+    Rcpp

@@ -1,0 +1,11 @@
+# Ignore R history and workspace files
+.Rhistory
+.RData
+
+# Ignore compiled object and shared library files
+*.o
+*.so
+
+# Ignore macOS Finder metadata
+*.DS_Store
+.Rproj.user
