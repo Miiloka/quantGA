@@ -7,7 +7,7 @@
 - **R** (version 4.0 or later recommended)
 - The **Rcpp** and **RcppArmadillo** packages (as well as a working C++ toolchain)
 
-Install the development version of `quantGA` by cloning this repository and building it with `R CMD build` followed by `R CMD INSTALL`.
+Install the development version of `quantGA` by simply using `devtools::install_github("https://github.com/Miiloka/quantGA.git")`
 
 ## Basic usage
 
@@ -40,4 +40,3 @@ print(result)
 ## Simulation
 
 For a more complete Monte Carlo simulation illustrating the use of `GA.QR` at several quantile levels, see the script [`Simus.R`](.ignore/Simus.R) located in the `.ignore` folder.
-
