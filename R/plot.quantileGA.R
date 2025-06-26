@@ -13,18 +13,19 @@ plot.quantileGA <- function(x, type = c("convergence", "residuals"), ...) {
     if (type == "convergence") {
         generations <- seq_along(x$history$best_fitness)
         plot(generations, x$history$best_fitness,
-             type = "l", col = "blue", lwd = 2,
-             xlab = "Generation", ylab = "Fitness",
-             main = "Genetic algorithm convergence", ...)
+            type = "l", col = "blue", lwd = 2,
+            xlab = "Generation", ylab = "Fitness",
+            main = "Genetic algorithm convergence", ...
+        )
         lines(generations, x$history$mean_fitness, col = "red", lwd = 1, lty = 2)
         legend("topright", c("Best fitness", "Mean fitness"),
-               col = c("blue", "red"), lty = c(1, 2), lwd = c(2, 1))
+            col = c("blue", "red"), lty = c(1, 2), lwd = c(2, 1)
+        )
     } else if (type == "residuals") {
         plot(x$fitted_values, x$residuals,
-             xlab = "Fitted values", ylab = "Residuals",
-             main = "Residual plot", ...)
+            xlab = "Fitted values", ylab = "Residuals",
+            main = "Residual plot", ...
+        )
         abline(h = 0, col = "red", lty = 2)
     }
 }
-
-

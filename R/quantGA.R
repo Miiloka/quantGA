@@ -40,7 +40,7 @@
         }
     }
 
-    # ----- Initialization by linear regression (beta^(0) = (X'X)^(-1) * X'y)
+    # ----- Using linear regression (beta^(0) = (X'X)^(-1) * X'y)
     if (!is.null(X) && !is.null(y) && n_lm_based > 0) {
         tryCatch( # fallback if X'X is not invertible
             {
@@ -97,7 +97,6 @@
         return(rbind(parent1, parent2))
     }
 
-    # Crossover mask
     crossover_mask <- runif(length(parent1)) < 0.5
     child1 <- ifelse(crossover_mask, parent1, parent2)
     child2 <- ifelse(crossover_mask, parent2, parent1)
@@ -106,11 +105,8 @@
 
 .mutGaussAdapt <- function(individual, mutation_prob, mutation_strength,
                           bounds, generation = 1, max_generations = 100) {
-    # Adapt mutation strength over time
     adaptation_factor <- 1 - (generation / max_generations) * 0.5
     adapted_strength <- mutation_strength * adaptation_factor
-
-    # mutation
     mutation_mask <- runif(length(individual)) < mutation_prob
 
     if (any(mutation_mask)) {
